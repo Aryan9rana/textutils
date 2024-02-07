@@ -32,7 +32,7 @@ export default function Textform(props){
     const [text, setText] = useState('');
 
     return(
-        <div className='container' style={{
+        <div className='container my-4' style={{
             color:props.mode==='light'?'#272a2d':'white'}} >
         <h1>{props.heading}</h1>
         <div className="mb-3">
@@ -41,8 +41,8 @@ export default function Textform(props){
         color:props.mode==='light'?'#272a2d':'white'
         }} id="exampleFormControlTextarea1" onChange={handleOnChange} rows="8" ></textarea>
         </div>
-        <button className='btn btn-primary mx-2' onClick={handleUpClick}> Convert to uppercase</button>
-        <button className='btn btn-primary mx-2' onClick={handleLowClick}> Convert to Lowercase</button>
+        <button disabled={text.length===0} className='btn btn-primary mx-2 my-1' onClick={handleUpClick}> Convert to uppercase</button>
+        <button disabled={text.length===0} className='btn btn-primary mx-2 my-1' onClick={handleLowClick}> Convert to Lowercase</button>
         <p> words= {
         countWords(text)
         } characters={ text.length}</p>
