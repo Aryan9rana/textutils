@@ -8,7 +8,6 @@ import Alerts from './components/Alerts.js';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   Routes
 } from "react-router-dom";
 
@@ -42,16 +41,18 @@ function App() {
   }
 
   return (
-    <Router>
+    // <Router>
     <div>
   <Navbar title="t2" mode={mode} toggleMode={toggleMode}/>
   <Alerts alert={alert}/>
-  <Routes>
+  {/* <Routes>
     <Route exact path="/" element={<Textform heading="enter the text to analyze" mode={mode} changeAlert={changeAlert}/>}/>
     <Route exact path="about" element={<About />} />
-  </Routes>
+  </Routes> */}
+  <Textform heading="enter the text to analyze" mode={mode} changeAlert={changeAlert}/>
+  <About/>
     </div>
-    </Router>
+    // </Router>
   );
 }
 
